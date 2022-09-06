@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Useful commands to work on the IFB-core Cluster - Functional genomic data analysis - transcriptomics 2022</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Useful commands to work on the IFB-core Cluster";
+        var mkdocs_page_input_path = "IFBcommands.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Functional genomic data analysis - transcriptomics 2022
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Microarrays/Microarrays/">1. Microarrays</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../RNAseq/RNAseq/">2. RNAseq</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../IFBserver/">How to connect to the IFB server</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../IFBrstudio/">How to connect to the IFB Rstudio</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Useful commands to work on the IFB-core Cluster</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#how-to-downloadupload-your-data-from-the-cluster">How to download/upload your data from the cluster</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#how-to-get-information-on-your-current-job">How to get information on your current job</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#how-to-list-all-your-runningpending-jobs">How to list all your running/pending jobs</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#how-to-cancel-jobs">How to cancel jobs</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Functional genomic data analysis - transcriptomics 2022</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+      <li>Useful commands to work on the IFB-core Cluster</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="useful-commands-to-work-on-the-ifb-core-cluster">Useful commands to work on the IFB-core Cluster</h1>
+<p>Here are some useful command lines you may need to work on the IFB-core Cluster during the practical.</p>
+<p>You can find more detailed information and video tutorial on <a href="https://ifb-elixirfr.gitlab.io/cluster/doc/">IFB-core Cluster Documentation</a>.</p>
+<hr />
+<h2 id="how-to-downloadupload-your-data-from-the-cluster">How to download/upload your data from the cluster</h2>
+<p>To download file/files from the cluster to your current directory</p>
+<pre><code>scp  '&lt;your login&gt;@core.cluster.france-bioinformatique.fr:/&lt;absolute path to your file&gt;' .
+</code></pre>
+<p>To download a folder from the cluster to your current directory</p>
+<pre><code>scp -r  '&lt;your login&gt;@core.cluster.france-bioinformatique.fr:/&lt;absolute path to your folder&gt;' .
+</code></pre>
+<p>To upload a file to the cluster</p>
+<pre><code>scp '&lt;path to your local folder&gt;' '&lt;your login&gt;@core.cluster.france-bioinformatique.fr:/&lt;absolute path to the target folder&gt;'
+</code></pre>
+<hr />
+<h2 id="how-to-get-information-on-your-current-job">How to get information on your current job</h2>
+<pre><code>squeue -u &lt;your login&gt;
+</code></pre>
+<hr />
+<h2 id="how-to-list-all-your-runningpending-jobs">How to list all your running/pending jobs</h2>
+<pre><code>squeue -u &lt;your login&gt; -t RUNNING
+squeue -u &lt;your login&gt; -t PENDING
+</code></pre>
+<hr />
+<h2 id="how-to-cancel-jobs">How to cancel jobs</h2>
+<p>Cancel a specific job</p>
+<pre><code>scancel &lt;jobid&gt;
+</code></pre>
+<p>Cancel all your jobs</p>
+<pre><code>scancel -u &lt;your login&gt;
+</code></pre>
+<p>Cancel all your pending jobs</p>
+<pre><code>scancel -t PENDING -u &lt;your login&gt;
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../IFBrstudio/" class="btn btn-neutral float-left" title="How to connect to the IFB Rstudio"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../IFBrstudio/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
